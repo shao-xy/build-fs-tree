@@ -14,4 +14,6 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_BINARY_DIR})
 
+add_subdirectory(common)
+add_subdirectory(tree)
 add_subdirectory(test)
