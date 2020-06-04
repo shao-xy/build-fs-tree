@@ -8,12 +8,15 @@ using std::endl;
 
 bool TreeNode::hit(string relative_path, int depth)
 {
-	pop += 1;
 	// if relative path is null, we succeed here.
-	if (relative_path.length() == 0 || depth == MAX_TREE_DEPTH)
+	if (relative_path.length() == 0 || depth == MAX_TREE_DEPTH) {
+		pop += 1;
 		return true;
+	}
 
 	if (relative_path[0] != '/')	return false;
+
+	pop += 1;
 
 	size_t pos = relative_path.find('/', 1);
 	string name = relative_path.substr(1, pos - 1);

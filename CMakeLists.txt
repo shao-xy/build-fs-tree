@@ -19,3 +19,6 @@ add_subdirectory(common)
 add_subdirectory(reader)
 add_subdirectory(tree)
 add_subdirectory(test)
+
+add_executable(build-trace-tree build_trace_tree.cc)
+target_link_libraries(build-trace-tree reader tree)
