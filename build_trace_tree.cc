@@ -37,13 +37,13 @@ int main(int argc, char * argv[])
 			t.hit(s);
 	}
 	cout << endl;
-	s = t.show_tree();
-	cout << s << endl;
+
+	cout << t.show_tree(true) << endl;
 
 	string outputfile = "result/" + PathUtil::basename(targetfile, true) + ".tree";
 	std::ofstream ofs(outputfile);
 	if (ofs.is_open()) {
-		ofs << s;
+		ofs << t.show_tree(false);
 		ofs.close();
 	}
 	return 0;

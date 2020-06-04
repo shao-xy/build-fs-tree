@@ -17,7 +17,7 @@ public:
 		: parent(parent_), pop(0) {}
 	bool hit(string relative_path, int depth = 0);
 
-	string show_subtree(string myname, int depth = 0);
+	string show_subtree(string myname, bool withColor = false, int depth = 0);
 
 	int get_pop() { return pop; }
 };

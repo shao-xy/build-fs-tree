@@ -39,7 +39,7 @@ bool TreeNode::hit(string relative_path, int depth)
 	return child->hit(child_relpath, depth + 1);
 }
 
-string TreeNode::show_subtree(string myname, int depth)
+string TreeNode::show_subtree(string myname, bool withColor, int depth)
 {
 	stringstream ss;
 	// indent
@@ -52,11 +52,15 @@ string TreeNode::show_subtree(string myname, int depth)
 
 	int children_size = children.size();
 	string flag = children_size ? "*--+" : "*-->";
-	ss << flag << " \033[1;31m(" << pop << ")\033[0m " << myname << endl;
+	ss << flag
+	   << (withColor ? " \033[1;31m(" : " (")
+	   << pop
+	   << (withColor ? ")\033[0m " : ") ")
+	   << myname << endl;
 
 	for (map<string, TreeNode*>::iterator it = children.begin();
 		it != children.end(); it++) {
-		ss << it->second->show_subtree(it->first, depth + 1);
+		ss << it->second->show_subtree(it->first, withColor, depth + 1);
 	}
 	return ss.str();
 }

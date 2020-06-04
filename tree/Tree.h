@@ -14,7 +14,7 @@ public:
 	~Tree() {}
 
 	bool hit(string path);
-	string show_tree();
+	string show_tree(bool withColor = false);
 };
 
 #endif /* tree/Tree.h */

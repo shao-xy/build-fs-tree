@@ -8,7 +8,7 @@ bool Tree::hit(string path)
 	return root.hit(abs_path);
 }
 
-string Tree::show_tree()
+string Tree::show_tree(bool withColor)
 {
-	return root.show_subtree("/");
+	return root.show_subtree("/", withColor);
 }
